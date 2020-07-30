@@ -2,10 +2,6 @@ import requests
 import time
 from bs4 import BeautifulSoup
 
-#connection = MongoClient('192.168.0.234', 27017)
-#db = connection.reading_list
-#articles = db.articles
-
 
 security_posts = requests.get('https://dev.to/t/security')
 linux_posts = requests.get('https://dev.to/t/linux')
@@ -52,22 +48,11 @@ def getFirstThree(article_array, latest):
         latest.append(article_array[i])
 
 
-
-#db.articles.delete_many({})
-
-def addToDatabase(latest_list, collection):
-    for seg in latest_list:
-        post_data = {
-                'title': seg[0],
-                'url': seg[1],
-        }
-        new_doc = collection.insert_one(post_data)
-
-
 findDevLinks(soup1, security_article_data)
 
 findDevLinks(soup2, linux_article_data)
 
 findDailySwigLinks(soup3, daily_swig_data)
 
-print(latest_articles)
+for i in range(len(latest_articles)):
+	print(latest_articles[i][0] + "\n" + latest_articles[i][1] + "\n\n")

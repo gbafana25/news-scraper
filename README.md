@@ -1,7 +1,6 @@
-# news-grab
+# news-scraper
 
-this is a content/news scraper for security-related sites
-**Important: Frontend is not finished, server requires a rewrite.  Scraper works as intended**
+This is a content scraper for linux/cybersecurity sites
 
 ## currently scrapes:
 - https://dev.to/t/security
