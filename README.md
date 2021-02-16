@@ -1,6 +1,6 @@
 # news-scraper
 
-This is a content scraper for linux/cybersecurity sites
+This is a content scraper for linux/cybersecurity sites.  Uses firefox to open links.
 
 ## currently scrapes:
 - https://dev.to/t/security
