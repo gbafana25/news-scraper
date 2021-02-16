@@ -3,6 +3,7 @@
 import requests
 import time
 from bs4 import BeautifulSoup
+import subprocess
 
 
 security_posts = requests.get('https://dev.to/t/security')
@@ -57,4 +58,8 @@ findDevLinks(soup2, linux_article_data)
 findDailySwigLinks(soup3, daily_swig_data)
 
 for i in range(len(latest_articles)):
-	print(latest_articles[i][0] + "\n" + latest_articles[i][1] + "\n\n")
+	print(str(i) + ". " + latest_articles[i][0] + "\n" + latest_articles[i][1] + "\n\n")
+
+option = input("Type number of article you want to open: ")
+print("You selected option: " + latest_articles[int(option)][1])
+subprocess.run(['firefox', latest_articles[int(option)][1]])
