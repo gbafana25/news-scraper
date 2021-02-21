@@ -10,3 +10,4 @@ This is a content scraper for linux/cybersecurity sites.  Uses firefox to open l
 - https://dev.to/t/security
 - https://dev.to/t/linux
 - https://portswigger.net/daily-swig
+- https://arstechnica.com/gadgets

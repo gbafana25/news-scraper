@@ -8,13 +8,16 @@ import subprocess
 
 security_posts = requests.get('https://dev.to/t/security')
 linux_posts = requests.get('https://dev.to/t/linux')
+ars_posts = requests.get('https://arstechnica.com/gadgets')
 daily_swig_posts = requests.get('https://portswigger.net/daily-swig')
 soup1 = BeautifulSoup(security_posts.text, "html.parser")
 soup2 = BeautifulSoup(linux_posts.text, "html.parser")
 soup3 = BeautifulSoup(daily_swig_posts.text, "html.parser")
+soup4 = BeautifulSoup(ars_posts.text, "html.parser")
 security_article_data = []
 linux_article_data = []
 daily_swig_data = []
+ars_data = []
 latest_articles = []
 
 def findDevLinks(soup, article_array):
@@ -45,6 +48,14 @@ def findDailySwigLinks(soup, article_array):
     for i in range(3):
         latest_articles.append(article_array[i])
 
+def findArsLinks(soup, article_array):
+	for tag in soup.findAll('h2'):
+		for link in tag.findAll('a'):
+			if link.has_attr('href'):
+				field = [link.string, link.get('href')]
+				article_array.append(field)
+	for i in range(3):
+		latest_articles.append(article_array[i])
 
 def getFirstThree(article_array, latest):
     for i in range(3):
@@ -57,8 +68,10 @@ findDevLinks(soup2, linux_article_data)
 
 findDailySwigLinks(soup3, daily_swig_data)
 
+findArsLinks(soup4, ars_data)
+
 for i in range(len(latest_articles)):
-	print(str(i) + ". " + latest_articles[i][0] + "\n" + latest_articles[i][1] + "\n\n")
+	print(str(i) + ". " + latest_articles[i][0] + "\n")
 
 option = input("Type number of article you want to open: ")
 print("You selected option: " + latest_articles[int(option)][0])
