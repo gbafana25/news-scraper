@@ -7,7 +7,7 @@ This is a content scraper for linux/cybersecurity sites.  Uses firefox to open l
 - change last line to the browser you want to use (default is firefox)
 
 ## currently scrapes:
-- https://dev.to/t/security
-- https://dev.to/t/linux
-- https://portswigger.net/daily-swig
-- https://arstechnica.com/gadgets
+- https://dev.to/t/security - DEV.to security tag
+- https://dev.to/t/linux - DEV.to linux tag
+- https://portswigger.net/daily-swig - Portswigger's news page
+- https://arstechnica.com/gadgets - Ars Technica gadgets page
