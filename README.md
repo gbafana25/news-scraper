@@ -1,6 +1,6 @@
 # news-scraper
 
-This is a content scraper for linux/cybersecurity sites.  Uses firefox to open links.
+This is a content scraper for linux/cybersecurity sites.
 
 ## Installation:
 - `pip3 install -r requirements.txt`
