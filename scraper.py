@@ -75,4 +75,4 @@ for i in range(len(latest_articles)):
 
 option = input("Type number of article you want to open: ")
 print("You selected option: " + latest_articles[int(option)][0])
-subprocess.run(['firefox', latest_articles[int(option)][1]])
+subprocess.run(['links', latest_articles[int(option)][1]])
